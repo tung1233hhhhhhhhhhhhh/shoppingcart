@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.0.4/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10.0.4/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            virtual: {
+                slides: [], // Dữ liệu của các slide ảo
+                renderSlide: function (slide, index) {
+                    // Hàm này sẽ được gọi để tạo nội dung cho slide ảo
+                    // slide: phần tử slide ảo (HTML)
+                    // index: chỉ số của slide ảo trong mảng slides
+
+                    // Tạo phần tử hình ảnh
+                    var image = document.createElement('img');
+                    image.src = '/assets/imgs/slideshow_' + (index + 1) + '.jpg'; // Đường dẫn tới hình ảnh
+
+                    // Thêm hình ảnh vào slide
+                    slide.appendChild(image);
+
+                    return slide;
+                },
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        var virtualData = []; // Dữ liệu của các slide ảo
+
+        // Tạo dữ liệu cho các slide ảo
+        for (var i = 0; i < 2; i++) {
+            virtualData.push({
+                id: i + 1,
+                // Thêm các thuộc tính khác nếu cần
+            });
+        }
+
+        // Cập nhật dữ liệu cho các slide ảo
+        swiper.virtual.updateSlides(function () {
+            return virtualData.map(function (data) {
+                return {
+                    id: data.id,
+                    // Thêm các thuộc tính khác nếu cần
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

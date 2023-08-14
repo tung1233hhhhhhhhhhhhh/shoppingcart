@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
+</head>
+<style>
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .breadcrumb {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .breadcrumb .container {
+        margin: 0 10rem;
+        padding: 0 2rem;
+    }
+
+    .breadcrumb .container .text-top a {
+        color: #ccc;
+    }
+
+    .breadcrumb .container .text-top a:hover {
+        color: black;
+        transition: .2s linear;
+    }
+
+    .breadcrumb .container .text-main {
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    .breadcrumb .container .text-bottom {
+        color: #a49d9d;
+    }
+</style>
+
+<body>
+
+    <div class="breadcrumb">
+        <ul class="container">
+            <li class="text-top">
+                <a href="">Trang Chủ</a> / Tất cả sản phẩm
+            </li>
+            <li class="text-main">TẤT CẢ SẢN PHẨM</li>
+            <li class="text-bottom">
+                Danh Mục
+                <i class="ti-angle-down"></i>
+                <ul class="breadcrumb-list">
+                    <li><a href="">Áo</a></li>
+                    <li><a href="">Áo khoác</a></li>
+                    <li><a href="">Quần</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
